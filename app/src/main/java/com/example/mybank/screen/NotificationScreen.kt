@@ -9,7 +9,7 @@ import androidx.navigation.NavHostController
 @Composable
 fun NotificationScreen(navController : NavHostController) {
     Text(
-        text = "Wallet Section",
+        text = "Notifications",
         fontSize = 28.sp,
         color = Color.White
     )

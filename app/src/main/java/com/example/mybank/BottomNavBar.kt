@@ -51,15 +51,19 @@ fun BottomNavBar(bottomNavController : NavHostController) {
                     selected.intValue = index
                     when(selected.intValue) {
                         0 -> {
+                            bottomNavController.popBackStack()
                             bottomNavController.navigate(Screen.Home.rout)
                         }
                         1 -> {
+                            bottomNavController.popBackStack()
                             bottomNavController.navigate(Screen.Wallet.rout)
                         }
                         2 -> {
+                            bottomNavController.popBackStack()
                             bottomNavController.navigate(Screen.Notifications.rout)
                         }
                         3 -> {
+                            bottomNavController.popBackStack()
                             bottomNavController.navigate(Screen.Account.rout)
                         }
                     }
@@ -78,8 +82,6 @@ fun BottomNavBar(bottomNavController : NavHostController) {
                     )
                 }
             )
-
         }
     }
-
 }

@@ -17,10 +17,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.mybank.screen.SearchScreen
+import com.example.mybank.utils.Screen
 
-@Preview
+
 @Composable
-fun WalletSection() {
+fun WalletSection(navController : NavHostController) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -48,7 +54,9 @@ fun WalletSection() {
             modifier = Modifier
                 .clip(RoundedCornerShape(15.dp))
                 .background(MaterialTheme.colorScheme.secondaryContainer)
-                .clickable {  }
+                .clickable {
+                    navController.navigate(Screen.Search.rout)
+                }
                 .padding(6.dp),
         ) {
             Icon(

@@ -17,6 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.mybank.screen.MainScreen
+import com.example.mybank.screen.SearchScreen
 import com.example.mybank.ui.theme.MyBankTheme
 import com.example.mybank.utils.Screen
 
@@ -32,13 +33,18 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize()
                 ) {
                     val navController = rememberNavController()
+                    val searchNavController = rememberNavController()
 
                     NavHost(
                         navController = navController,
                         startDestination = Screen.Main.rout
                     ) {
                         composable(Screen.Main.rout) {
-                            MainScreen(navController)
+                            MainScreen(navController = navController)
+                        }
+
+                        composable(Screen.Search.rout) {
+                            SearchScreen(navController = navController)
                         }
                     }
                 }
