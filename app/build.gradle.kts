@@ -64,10 +64,13 @@ dependencies {
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:$compose_version")
     debugImplementation("androidx.compose.ui:ui-tooling:$compose_version")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:$compose_version")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     // EDGE TO EDGE
     implementation("androidx.activity:activity-compose:$compose_version")
+
+    // NAVIGATION
+    implementation("androidx.navigation:navigation-compose:2.7.6")
 
     // EXTENDED ICONS
     implementation("androidx.compose.material:material-icons-extended:$compose_version")

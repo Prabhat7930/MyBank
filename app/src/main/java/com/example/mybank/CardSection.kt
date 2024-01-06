@@ -20,7 +20,6 @@ import com.example.mybank.data.CardSectionItems
 import com.example.mybank.ui.theme.*
 
 val cardItems = listOf(
-
     CardSectionItems(
         cardType = "VISA",
         cardNumber = "6478 3215 5809 6446",

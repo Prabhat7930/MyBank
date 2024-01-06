@@ -22,45 +22,45 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.mybank.data.currencySectionItems
+import com.example.mybank.data.CurrencySectionItems
 
 val currencyItems = listOf(
-    currencySectionItems(
+    CurrencySectionItems(
         name = "USD",
         buy = 325.46f,
         sell = 353.22f,
         icon = Icons.Rounded.AttachMoney
     ),
 
-    currencySectionItems(
+    CurrencySectionItems(
         name = "EUR",
         buy = 455.16f,
         sell = 753.72f,
         icon = Icons.Rounded.Euro
     ),
 
-    currencySectionItems(
+    CurrencySectionItems(
         name = "INR",
         buy = 665.35f,
         sell = 553.52f,
         icon = Icons.Rounded.CurrencyRupee
     ),
 
-    currencySectionItems(
+    CurrencySectionItems(
         name = "YEN",
         buy = 125.27f,
         sell = 163.84f,
         icon = Icons.Rounded.CurrencyYen
     ),
 
-    currencySectionItems(
+    CurrencySectionItems(
         name = "USD",
         buy = 455.49f,
         sell = 853.21f,
         icon = Icons.Rounded.AttachMoney
     ),
 
-    currencySectionItems(
+    CurrencySectionItems(
         name = "INR",
         buy = 665.64f,
         sell = 692.35f,

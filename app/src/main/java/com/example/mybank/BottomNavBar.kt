@@ -1,15 +1,16 @@
 package com.example.mybank
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.mybank.data.BottomNavItems
+import com.example.mybank.utils.Screen
 
 val navItems = listOf(
     BottomNavItems(
@@ -33,17 +34,36 @@ val navItems = listOf(
     )
 )
 
-@Preview
+
 @Composable
-fun BottomNavBar() {
+fun BottomNavBar(bottomNavController : NavHostController) {
+
+    val selected = rememberSaveable{(mutableIntStateOf(0))}
+
     NavigationBar(
         modifier = Modifier
             .background(MaterialTheme.colorScheme.inverseSurface)
     ) {
         navItems.forEachIndexed { index, item ->
             NavigationBarItem(
-                selected = index == 0,
-                onClick = { /*todo*/ },
+                selected = selected.intValue == index,
+                onClick = {
+                    selected.intValue = index
+                    when(selected.intValue) {
+                        0 -> {
+                            bottomNavController.navigate(Screen.Home.rout)
+                        }
+                        1 -> {
+                            bottomNavController.navigate(Screen.Wallet.rout)
+                        }
+                        2 -> {
+                            bottomNavController.navigate(Screen.Notifications.rout)
+                        }
+                        3 -> {
+                            bottomNavController.navigate(Screen.Account.rout)
+                        }
+                    }
+                },
                 icon = {
                     Icon(
                         imageVector = item.icon,
